@@ -1,0 +1,29 @@
+{
+  "itemId" : "_Cj3acBanEe-vx7hlYwULrA",
+  "contextList" : [ {
+    "contextName" : "Default",
+    "repoId" : "_7ssUUBLiEe-efpfv_xI-Rw",
+    "parameterList" : [ {
+      "id" : "_7tBEcRLiEe-efpfv_xI-Rw",
+      "name" : "SATYS_finance_Password"
+    }, {
+      "id" : "_7tBEchLiEe-efpfv_xI-Rw",
+      "name" : "SATYS_finance_Login"
+    }, {
+      "id" : "_7tBEcxLiEe-efpfv_xI-Rw",
+      "name" : "SATYS_finance_Port"
+    }, {
+      "id" : "_7tBEdBLiEe-efpfv_xI-Rw",
+      "name" : "SATYS_finance_Server"
+    }, {
+      "id" : "_7tBEdRLiEe-efpfv_xI-Rw",
+      "name" : "SATYS_finance_Schema"
+    }, {
+      "id" : "_7tBEdhLiEe-efpfv_xI-Rw",
+      "name" : "SATYS_finance_AdditionalParams"
+    }, {
+      "id" : "_7tBEdxLiEe-efpfv_xI-Rw",
+      "name" : "SATYS_finance_ServiceName"
+    } ]
+  } ]
+}

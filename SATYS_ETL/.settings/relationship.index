@@ -1,5 +1,55 @@
 [ {
   "baseItem" : {
+    "id" : "_-tFl4BaVEe-vx7hlYwULrA",
+    "version" : "0.1",
+    "type" : "job"
+  },
+  "relatedItems" : [ {
+    "id" : "_7ssUUBLiEe-efpfv_xI-Rw",
+    "version" : "Latest",
+    "type" : "context"
+  }, {
+    "id" : "_jXaLgBLiEe-efpfv_xI-Rw",
+    "version" : "Latest",
+    "type" : "property"
+  }, {
+    "id" : "_jXaLgBLiEe-efpfv_xI-Rw - BG_SATYS",
+    "version" : "Latest",
+    "type" : "schema"
+  } ]
+}, {
+  "baseItem" : {
+    "id" : "_Cj3acBanEe-vx7hlYwULrA",
+    "version" : "0.1",
+    "type" : "job"
+  },
+  "relatedItems" : [ {
+    "id" : "_7ssUUBLiEe-efpfv_xI-Rw",
+    "version" : "Latest",
+    "type" : "context"
+  }, {
+    "id" : "_jXaLgBLiEe-efpfv_xI-Rw",
+    "version" : "Latest",
+    "type" : "property"
+  }, {
+    "id" : "_jXaLgBLiEe-efpfv_xI-Rw - BG_SATYS",
+    "version" : "Latest",
+    "type" : "schema"
+  }, {
+    "id" : "_jXaLgBLiEe-efpfv_xI-Rw - BN_SATYS",
+    "version" : "Latest",
+    "type" : "schema"
+  }, {
+    "id" : "_jXaLgBLiEe-efpfv_xI-Rw - DIM_COMPTE",
+    "version" : "Latest",
+    "type" : "schema"
+  }, {
+    "id" : "_jXaLgBLiEe-efpfv_xI-Rw - DIM_TEMP",
+    "version" : "Latest",
+    "type" : "schema"
+  } ]
+}, {
+  "baseItem" : {
     "id" : "_IHy_kBLiEe-efpfv_xI-Rw",
     "version" : "0.1",
     "type" : "job"
