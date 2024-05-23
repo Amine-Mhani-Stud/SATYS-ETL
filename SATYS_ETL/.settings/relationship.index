@@ -69,6 +69,25 @@
   } ]
 }, {
   "baseItem" : {
+    "id" : "_HUi00BkQEe-lu9en5cklyA",
+    "version" : "0.1",
+    "type" : "job"
+  },
+  "relatedItems" : [ {
+    "id" : "_7ssUUBLiEe-efpfv_xI-Rw",
+    "version" : "Latest",
+    "type" : "context"
+  }, {
+    "id" : "_jXaLgBLiEe-efpfv_xI-Rw",
+    "version" : "Latest",
+    "type" : "property"
+  }, {
+    "id" : "_jXaLgBLiEe-efpfv_xI-Rw - DIM_MULTIPLICATEUR",
+    "version" : "Latest",
+    "type" : "schema"
+  } ]
+}, {
+  "baseItem" : {
     "id" : "_IHy_kBLiEe-efpfv_xI-Rw",
     "version" : "0.1",
     "type" : "job"
@@ -90,6 +109,10 @@
     "version" : "Latest",
     "type" : "property"
   }, {
+    "id" : "_xrA3EBH9Ee-dxZcEIXtiGw",
+    "version" : "Latest",
+    "type" : "property"
+  }, {
     "id" : "_NNM2MBH9Ee-dxZcEIXtiGw - metadata",
     "version" : "Latest",
     "type" : "schema"
@@ -99,6 +122,14 @@
     "type" : "schema"
   }, {
     "id" : "_iegbMBH-Ee-dxZcEIXtiGw - metadata",
+    "version" : "Latest",
+    "type" : "schema"
+  }, {
+    "id" : "_jXaLgBLiEe-efpfv_xI-Rw - PNL_SATYS",
+    "version" : "Latest",
+    "type" : "schema"
+  }, {
+    "id" : "_xrA3EBH9Ee-dxZcEIXtiGw - metadata",
     "version" : "Latest",
     "type" : "schema"
   } ]

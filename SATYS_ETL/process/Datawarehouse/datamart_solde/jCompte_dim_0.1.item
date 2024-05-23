@@ -201,7 +201,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#10;  PNL_SATYS.\&quot;ID\&quot;, &#10;  PNL_SATYS.COMPTE, &#10;  PNL_SATYS.LIBELLE_COMPTE, &#10;  PNL_SATYS.LINEID, &#10;  PNL_SATYS.RUBRIQUES_REPORTING, &#10;  PNL_SATYS.MULTPLICATEUR&#10;FROM PNL_SATYS&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#10;  PNL_SATYS.\&quot;ID\&quot;, &#10;  PNL_SATYS.COMPTE, &#10;  PNL_SATYS.LIBELLE_COMPTE, &#10;  PNL_SATYS.LINEID, &#10;  PNL_SATYS.RUBRIQUES_REPORTING&#10;FROM PNL_SATYS&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -226,8 +226,6 @@
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="RUBRIQUES_REPORTING"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="MULTPLICATEUR"/>
-      <elementValue elementRef="TRIM" value="false"/>
     </elementParameter>
     <elementParameter field="CHECK" name="NO_NULL_VALUES" value="false"/>
     <elementParameter field="CHECK" name="SUPPORT_NLS" value="false"/>
@@ -248,9 +246,6 @@
       <column comment="" key="false" length="100" name="RUBRIQUES_REPORTING" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="-1" name="MULTPLICATEUR" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_Integer" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
     </metadata>
   </node>
   <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="544" posY="256">
@@ -268,7 +263,10 @@
     <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="DIM_COMPTE" name="out">
-      <column comment="" key="false" length="100" name="NUM_CPT" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_Integer" usefulColumn="true">
+      <column comment="" key="true" length="-1" name="ID_CPT" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="-1" name="NUM_CPT" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="100" name="LIB_CPT" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
@@ -277,18 +275,15 @@
       <column comment="" key="false" length="100" name="RUB_CPT" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="-1" name="MULTIPLICATEUR_CPT" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_Integer" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out" sizeState="INTERMEDIATE">
+        <mapperTableEntries name="ID_CPT" type="id_Integer"/>
         <mapperTableEntries expression="row1.COMPTE " name="NUM_CPT" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="row1.LIBELLE_COMPTE " name="LIB_CPT" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.RUBRIQUES_REPORTING " name="RUB_CPT" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.MULTPLICATEUR " name="MULTIPLICATEUR_CPT" nullable="true" type="id_Integer"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row1" sizeState="INTERMEDIATE">
         <mapperTableEntries name="ID" type="id_Integer"/>
@@ -296,7 +291,6 @@
         <mapperTableEntries name="LIBELLE_COMPTE" nullable="true" type="id_String"/>
         <mapperTableEntries name="LINEID" nullable="true" type="id_Integer"/>
         <mapperTableEntries name="RUBRIQUES_REPORTING" nullable="true" type="id_String"/>
-        <mapperTableEntries name="MULTPLICATEUR" nullable="true" type="id_Integer"/>
       </inputTables>
     </nodeData>
   </node>
@@ -337,6 +331,11 @@
     <elementParameter field="TABLE" name="ADD_COLS"/>
     <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="FIELD_OPTIONS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="ID_CPT"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="NUM_CPT"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
@@ -348,11 +347,6 @@
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="RUB_CPT"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="MULTIPLICATEUR_CPT"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
@@ -372,30 +366,30 @@
     <elementParameter field="CHECK" name="SUPPORT_NLS" value="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="DIM_COMPTE" name="tDBOutput_1">
-      <column comment="" key="false" length="100" name="NUM_CPT" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_Integer" usefulColumn="true">
+      <column comment="" key="true" length="-1" name="ID_CPT" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="-1" name="NUM_CPT" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="100" name="LIB_CPT" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="100" name="RUB_CPT" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="-1" name="MULTIPLICATEUR_CPT" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
     </metadata>
     <metadata connector="REJECT" label="DIM_COMPTE" name="REJECT">
-      <column comment="" key="false" length="100" name="NUM_CPT" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_Integer" usefulColumn="true">
+      <column comment="" key="true" length="-1" name="ID_CPT" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="-1" name="NUM_CPT" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="100" name="LIB_CPT" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="100" name="RUB_CPT" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="-1" name="MULTIPLICATEUR_CPT" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
@@ -447,13 +441,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="255;255;255"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="0;0;0"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_132eaab2-2e34-428a-b4d1-7dbaf05ac6a4"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>u/v+8aXAEeDPlFTVSARrLcAFoDisidrXlNLjUXtt8QuJAIKG/rLiSMd7alPwu9zC/nzrSVkSEdBS&#13;
-0pMieRJWlg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_cc6d13dd-3dea-4e3c-b362-7c320d3a8963"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>cEVuHvMRi3JB5CXLa7vDfvqHNX82bYw+srjELg3glBMVh9Snope3fnSP6hCIpbRcT8mIW4hrBexQ&#13;
-O/MscW2UtQ==</DigestValue></Reference></SignedInfo><SignatureValue>hV8k8YRVvLpXJ5M7Lge8N+5G7gmSkkNDJHBNXBx4qcb39VT7D15IcLctxzq8gR7ik9tpHsAdJs0d&#13;
-hJk3J601g63HWqyLf5nmK7AMlz+2weuf0sSpIAhvaBlVVCV9BGpm1AZ/xXwdHZi+Cft4+KlWGmZn&#13;
-iVb4r5RVN7xIrPnCOFMzHd0gCOQ2QUg5jVOWU8tH/9V8n2z9dHVHOofRK32fynSvR1fqoUGD7Zuu&#13;
-P/MWL+EJRxneLiUtfuNd2MeFZa9eaq4bXZdzXCO7VN0Xx6D8PuDWB09MSf0q34M8qq/ki+iuHA/k&#13;
-B4oIrH1Mc3fOqO8RU8Cc3NqY3n7usqjcDUXtWw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_46e0f354-9346-404a-b0d4-8e4d01fd0584"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>hFSuLG27j6GJi+cGNJTWqet69fq8/gs4rCzLevLEAY2By+FL77fjQTQ79sY/Q0Lvf4C7/DUok0M1&#13;
+2QHypU4JzA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_9db2820c-3765-468d-8599-6f35d9102ecb"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>/aqx30hqLldXS2Xb1oazBNezhT8rf8aLOhllF9MN27S9uRFcjCp7b4JXlUYi6KgWHw2/V43GUmWr&#13;
+pl/itUnBHg==</DigestValue></Reference></SignedInfo><SignatureValue>OY4Jh3CXyfDS9PBbHEw2HkEI6xx97CdjdNJ1t85XrRrgTCc4r/dIhdrxXNyBmJObTTTML+ctiXgE&#13;
+gxbps+rZHmxLBDXVPJmlyKmTWijj2gWbzJDOeNDdMJpL1Og+FNbNoGb13BiqV8uHH6FZhFBvHmxP&#13;
+J1lK5uAJuGCvtuERT8aFH5vV5vgoYrLPaQ5nuKK3o6apVMm0d3o7ihksHEzoEKLjIZYEv+9wa/80&#13;
+jdbdMMf222SbLZISyGrYcTEZkyKWnzdnxS0wRapMuoR/19ZBZIELyXwTvQ2U9i9DbMwFMddU8vZ0&#13;
+9oYukRrd6AUeOT79qPiPfZYsyfT8AuOnIvaqtg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -475,4 +469,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_cc6d13dd-3dea-4e3c-b362-7c320d3a8963" Target="#_132eaab2-2e34-428a-b4d1-7dbaf05ac6a4"><Timestamp>2024-05-21 15:44:11</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_9db2820c-3765-468d-8599-6f35d9102ecb" Target="#_46e0f354-9346-404a-b0d4-8e4d01fd0584"><Timestamp>2024-05-23 14:57:47</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
