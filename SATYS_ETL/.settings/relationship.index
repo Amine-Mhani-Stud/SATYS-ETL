@@ -152,10 +152,6 @@
     "version" : "Latest",
     "type" : "schema"
   }, {
-    "id" : "_jXaLgBLiEe-efpfv_xI-Rw - DIM_TEMP_EFF",
-    "version" : "Latest",
-    "type" : "schema"
-  }, {
     "id" : "_jXaLgBLiEe-efpfv_xI-Rw - IND_EFFECTIF",
     "version" : "Latest",
     "type" : "schema"
@@ -176,10 +172,6 @@
     "type" : "property"
   }, {
     "id" : "_jXaLgBLiEe-efpfv_xI-Rw - DIM_LIBELLE",
-    "version" : "Latest",
-    "type" : "schema"
-  }, {
-    "id" : "_jXaLgBLiEe-efpfv_xI-Rw - DIM_TEMP_ACT",
     "version" : "Latest",
     "type" : "schema"
   }, {
