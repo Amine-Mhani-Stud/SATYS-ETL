@@ -19,6 +19,21 @@
   } ]
 }, {
   "baseItem" : {
+    "id" : "_8MR58BmeEe-5OZ3DUDbSKw",
+    "version" : "0.1",
+    "type" : "job"
+  },
+  "relatedItems" : [ {
+    "id" : "SATYS_ETL:_NlYzkBgaEe-EH5x5eXzYcg",
+    "version" : "Latest",
+    "type" : "job"
+  }, {
+    "id" : "SATYS_ETL:_Scvg4BgWEe-EH5x5eXzYcg",
+    "version" : "Latest",
+    "type" : "job"
+  } ]
+}, {
+  "baseItem" : {
     "id" : "_CNn40BgUEe-EH5x5eXzYcg",
     "version" : "0.1",
     "type" : "job"
@@ -35,6 +50,29 @@
     "id" : "_jXaLgBLiEe-efpfv_xI-Rw - IND_ACTIVITY",
     "version" : "Latest",
     "type" : "schema"
+  } ]
+}, {
+  "baseItem" : {
+    "id" : "_CONnMBmfEe-5OZ3DUDbSKw",
+    "version" : "0.1",
+    "type" : "job"
+  },
+  "relatedItems" : [ {
+    "id" : "SATYS_ETL:_8MR58BmeEe-5OZ3DUDbSKw",
+    "version" : "Latest",
+    "type" : "job"
+  }, {
+    "id" : "SATYS_ETL:_NRKzwBmeEe-5OZ3DUDbSKw",
+    "version" : "Latest",
+    "type" : "job"
+  }, {
+    "id" : "SATYS_ETL:_lJrhABmeEe-5OZ3DUDbSKw",
+    "version" : "Latest",
+    "type" : "job"
+  }, {
+    "id" : "SATYS_ETL:_rhudoBmdEe-5OZ3DUDbSKw",
+    "version" : "Latest",
+    "type" : "job"
   } ]
 }, {
   "baseItem" : {
@@ -158,6 +196,29 @@
   } ]
 }, {
   "baseItem" : {
+    "id" : "_NRKzwBmeEe-5OZ3DUDbSKw",
+    "version" : "0.1",
+    "type" : "job"
+  },
+  "relatedItems" : [ {
+    "id" : "SATYS_ETL:_-tFl4BaVEe-vx7hlYwULrA",
+    "version" : "Latest",
+    "type" : "job"
+  }, {
+    "id" : "SATYS_ETL:_Cj3acBanEe-vx7hlYwULrA",
+    "version" : "Latest",
+    "type" : "job"
+  }, {
+    "id" : "SATYS_ETL:_HUi00BkQEe-lu9en5cklyA",
+    "version" : "Latest",
+    "type" : "job"
+  }, {
+    "id" : "SATYS_ETL:_wVmWMBaFEe-kxbRk490ppg",
+    "version" : "Latest",
+    "type" : "job"
+  } ]
+}, {
+  "baseItem" : {
     "id" : "_NlYzkBgaEe-EH5x5eXzYcg",
     "version" : "0.1",
     "type" : "job"
@@ -258,6 +319,21 @@
   } ]
 }, {
   "baseItem" : {
+    "id" : "_lJrhABmeEe-5OZ3DUDbSKw",
+    "version" : "0.1",
+    "type" : "job"
+  },
+  "relatedItems" : [ {
+    "id" : "SATYS_ETL:_IeWK0BgmEe-EH5x5eXzYcg",
+    "version" : "Latest",
+    "type" : "job"
+  }, {
+    "id" : "SATYS_ETL:_rUR50BgkEe-EH5x5eXzYcg",
+    "version" : "Latest",
+    "type" : "job"
+  } ]
+}, {
+  "baseItem" : {
     "id" : "_rUR50BgkEe-EH5x5eXzYcg",
     "version" : "0.1",
     "type" : "job"
@@ -274,6 +350,21 @@
     "id" : "_jXaLgBLiEe-efpfv_xI-Rw - IND_EFFECTIF",
     "version" : "Latest",
     "type" : "schema"
+  } ]
+}, {
+  "baseItem" : {
+    "id" : "_rhudoBmdEe-5OZ3DUDbSKw",
+    "version" : "0.1",
+    "type" : "job"
+  },
+  "relatedItems" : [ {
+    "id" : "SATYS_ETL:_IHy_kBLiEe-efpfv_xI-Rw",
+    "version" : "Latest",
+    "type" : "job"
+  }, {
+    "id" : "SATYS_ETL:_kExP8BdEEe-YndEiXkKMuQ",
+    "version" : "Latest",
+    "type" : "job"
   } ]
 }, {
   "baseItem" : {
