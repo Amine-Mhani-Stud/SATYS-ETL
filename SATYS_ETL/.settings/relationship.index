@@ -66,6 +66,10 @@
     "version" : "Latest",
     "type" : "job"
   }, {
+    "id" : "SATYS_ETL:_bHkxwBzyEe-hYIlFaTvQQQ",
+    "version" : "Latest",
+    "type" : "job"
+  }, {
     "id" : "SATYS_ETL:_lJrhABmeEe-5OZ3DUDbSKw",
     "version" : "Latest",
     "type" : "job"
