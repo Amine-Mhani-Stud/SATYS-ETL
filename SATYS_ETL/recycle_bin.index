@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <recyclebin:RecycleBin xmlns:recyclebin="http://www.talend.org/recyclebin">
+  <deletedFolders>process/Tests</deletedFolders>
+  <deletedFolders>process/utils</deletedFolders>
   <deletedItems id="_ccVK8BggEe-EH5x5eXzYcgdoc" path="Datawarehouse/datamart_effectif" type="JOB_DOC"/>
   <deletedItems id="_jXaLgBLiEe-efpfv_xI-Rw" path="" type="METADATA_CONNECTIONS"/>
   <deletedItems id="_CNn40BgUEe-EH5x5eXzYcg" path="Datawarehouse/datamart_activity" type="PROCESS"/>
   <deletedItems id="_ccVK8BggEe-EH5x5eXzYcg" path="Datawarehouse/datamart_effectif" type="PROCESS"/>
+  <deletedItems id="_dxunkBwFEe-cR9Eplaa23w" path="Tests" type="PROCESS"/>
+  <deletedItems id="_9XCDkCNnEe-P59LyKFjyKQ" path="utils" type="PROCESS"/>
+  <deletedItems id="_E294kB3FEe-UtrfKLe00EA" path="utils" type="PROCESS"/>
+  <deletedItems id="_bHkxwBzyEe-hYIlFaTvQQQ" path="utils" type="PROCESS"/>
 </recyclebin:RecycleBin>
